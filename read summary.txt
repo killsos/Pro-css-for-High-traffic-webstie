@@ -5,3 +5,194 @@ css 注释
 ====================*/
 
 颜色使用十六进制格式
+
+M must
+S should
+C could
+w won't
+
+wiki
+是一种文档仓库软件
+MediaWiki
+Atlassian confluence
+Mac OS Server wiki
+Trac
+
+错误报告
+lighthouse
+bugzilla
+JIRA
+Trac
+
+任务管理
+Things
+Rally
+Mingle
+
+
+错误跟踪和任务管理
+JIRA
+Agilo
+FogBugz
+
+版本控制
+VSS
+CVS
+SVN
+GIT
+Mercurial
+
+
+
+敏捷开发
+1 测试驱动开发 test-driven development TDD
+2 代码重构
+3 持续集成
+4 结对编程  避免知识囤积
+5 计划扑克
+6 代码审查
+7 每日例会
+8 回顾
+
+
+注释
+/* 注释   */
+
+cssDOC   http://cssdoc.net/
+采用DocBlock
+标签以@开始 紧跟名字
+格式如下:
+/**
+ * @author
+ * @copyright
+ * @version
+ * @todo
+ * @colordef
+ *
+ */
+
+
+
+id class 命名
+1 第一个字符 下划线 _ 连字符 - 字母
+2 第二个字符以后 下划线 _ 连字符 - 字母 数字
+
+下划线不符合css规范
+左右斜杠 /\都是不可接受字符
+* 不可接受字符
+
+1 驼峰大小写
+2 连字符
+
+可重用的类
+
+css命名空间模块  IE9以后支持
+@namespace  namespacealias  url
+namespacealias | div{}
+
+style
+UA
+Brower
+style
+
+
+<ie6  _下划线
+<ie7  *星号
+
+-moz-
+-webkit-
+-apple-
+-ms-
+-o-
+-khtml-
+
+媒体查询 @media screen and ....
+
+条件注释
+
+<!-- [if IE 8]>
+<![endif]-->
+
+怪异模式
+接近标准模式
+
+box-sizing: content-box 标准盒模型  border-box  IE盒模型
+
+haslayout
+是微软创造 只适用于IE 它决定元素如何描绘和约束自己的内容,与其他元素如何发生关系和互动,
+如何对应用程序事件/用户事件作出反应和进行传递
+元素的haslayout属性可以是真或假 当它为真的时候 元素“has layout”具有布局
+某元素默认就具有布局,同时也可以通过css触发其他元素的这一属性
+没有专门的haslayout属性可用 可以通过其他的css属性来指定它
+
+根据微软的定义一下元素具有布局
+html body img table tr td hr input button select textarea fieldset legend
+marquee frameset frame
+绝对布局元素
+浮动元素
+内联块元素
+滤镜
+
+csss属性将触发元素的haslayout值为真
+position:absolute
+float:left right
+display:inline-block
+width:除auto
+zoom:除normal
+writing-mode:tb-rl
+overflow:hidden scroll auto
+
+IE8/9 修复大多数由于haslayout引发问题
+
+oocss
+
+@font-face css3
+
+media
+
+width 视口宽度
+devic-width 设备宽度
+
+orientation  landscape  portrait
+
+aspect-ration 视口宽高比
+device-aspect-ration 设备宽高比
+
+color 表示设备每种色彩成分所用字位数量
+
+resolution 像素密度
+
+scan
+
+grid
+
+
+1 gzip
+2 cdn
+3 域名 浏览器在同一时间对同一个域名保持网络链接数有一定限制
+4 减少http请求次数比文件内容大小重要
+5 link 预解析 DNS
+6 图片合并
+8 data uri
+9 缓存
+  浏览器缓存
+      Expirse
+      cache-control
+        max-age
+        no-cache 永不缓存文件
+        no-store 不存储文件副本 缓存可被存储在内存中以供使用 但不能写入磁盘
+        public
+        prviate
+      代理器检测文件是否更改过
+      缓存机制验证方法:
+      1 last-Modified if-Modified-Since
+      2 ETag if-None-Match
+      高流量网站不使用ETag
+  代理缓存
+  网关缓存
+10 manifest  离线存储
+
+11 硬件加速  将元素移入3D
+tranform-style:preserve-3d;
+
+12 无刷新重载css  link加哈希值
